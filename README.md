@@ -1,2 +1,2 @@
-# TicTacToe---.NET-API
+# TicTacToeApi
 A TicTacToe API service using .Net
