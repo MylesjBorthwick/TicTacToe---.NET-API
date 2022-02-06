@@ -4,19 +4,18 @@ using TicTacToeApi.TicTacToe.Entities;
 
 namespace TicTacToeApi.TicTacToe.Dtos
 { 
-    public record GameDto : Constants{
+    public record CreatedGameDto{
 
-        public GameDto(){
+        public CreatedGameDto(){
             
         }
 
         public Guid GameId { get; init;}
 
-        public Player Player1 { get; set;}
+        public Guid Player1Id { get; set;}
 
-        public Player Player2 {get; set;}
+        public Guid Player2Id {get; set;}
 
-        public Board GameBoard {get; init;}
 
     }
 }

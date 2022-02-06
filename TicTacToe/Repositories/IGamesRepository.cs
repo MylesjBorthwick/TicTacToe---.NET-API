@@ -16,6 +16,10 @@ namespace TicTacToeApi.TicTacToe.Repositories
 
         void DeleteGame(Guid gameId);
 
+        Game GetGameFromPlayer(Guid playerId);
+
+        Player GetPlayer(Guid gameId, Guid playerId);
+
     }   
 
 }
