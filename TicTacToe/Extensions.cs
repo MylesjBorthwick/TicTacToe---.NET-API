@@ -30,17 +30,25 @@ public static class Extensions
     /// <param name="game">Inout Game object</param>
     /// <returns>DTO of the input object</returns>
     public static GameDto asGameDto(this Game game)
-        {
+    {
             return new GameDto
             {
                 GameId = game.GameId,
                 Player1 = game.Player1,
                 Player2 = game.Player2,
-                GameBoard = game.GameBoard,
-                GameState = game.GameState,
-                CreatedDate = game.CreatedDate
+                GameBoard = game.GameBoard
             };
-        }
+    }
+
+    public static CreatedGameDto asCreatedDto(this Game game)
+    {
+        return new CreatedGameDto
+        {
+            GameId = game.GameId,
+            Player1Id = game.Player1.PlayerId,
+            Player2Id = game.Player2.PlayerId
+        };
+    }
 
 
 }

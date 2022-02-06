@@ -20,14 +20,15 @@ namespace TicTacToeApi.TicTacToe.Entities
 
         }
 
-        public void UpdateBoard(int position, char symbol){
+        public int UpdateBoard(int position, char symbol){
 
             if(BoardRep[position] == Empty){
                 BoardRep[position] = symbol;
                 MoveCount++;
+                return 1;
             }
             else{
-                throw new InvalidMoveException("Choose an Empty Space");
+                return 0;
             }
 
             
