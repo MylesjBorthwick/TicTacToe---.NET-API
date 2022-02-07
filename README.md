@@ -100,15 +100,21 @@ To spice things up a little bit I decided to avoid using nested for loops for tr
 <div align="center">
 
 <img src="ReadmeMedia/2d.png" alt="drawing" width="400"/>
+  
 
-**|**
-**|**
-**|**
-**V**
+<p>
+  
+**Is Equal To...**
+  
+</p>
+
 </div>
 
+
 <div align="center">
+
 <img src="ReadmeMedia/1d.png" alt="drawing" width="400"/>
+
 </div>
 
 Using this model and a few helper methods for retrieving sub arrays, win conditions can be evaluated as follows:
