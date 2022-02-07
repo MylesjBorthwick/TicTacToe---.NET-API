@@ -36,7 +36,8 @@ public static class Extensions
                 GameId = game.GameId,
                 Player1 = game.Player1.asPlayerDto(),
                 Player2 = game.Player2.asPlayerDto(),
-                GameBoardRep = game.GameBoard.BoardRep
+                GameBoardRep = game.GameBoard.BoardRep,
+                MoveCount = game.GameBoard.MoveCount
             };
     }
 

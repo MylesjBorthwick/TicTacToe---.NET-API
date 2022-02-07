@@ -19,5 +19,7 @@ namespace TicTacToeApi.TicTacToe.Dtos
 
         public char[] GameBoardRep {get; init;}
 
+        public int MoveCount {get; init;}
+
     }
 }
