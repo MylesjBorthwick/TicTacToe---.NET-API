@@ -28,7 +28,7 @@ namespace TicTacToeApi.TicTacToe
         public void ConfigureServices(IServiceCollection services)
         {
             
-            services.AddSingleton<IGamesRepository, InMemGameRepsoitory>();
+            services.AddSingleton<IGamesRepository, InMemGameRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

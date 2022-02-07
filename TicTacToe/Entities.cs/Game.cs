@@ -1,6 +1,9 @@
 using System;
-using TicTacToe.Exceptions;
-
+/// <summary>
+/// This entity represents the TicTacToeGame.
+/// Game information is store including id, associated player and board as
+/// well as state information. Methods control game moves and win conditions.
+/// </summary>
 namespace TicTacToeApi.TicTacToe.Entities
 { 
     public record Game : Constants{
@@ -13,8 +16,10 @@ namespace TicTacToeApi.TicTacToe.Entities
 
         public Board GameBoard {get; init;}
 
+        //Current state of the game represented as a string
         public string GameState {get; set;}
 
+        //Flag for determining if game is complete
         public bool EndState {get; set;}
 
         public DateTimeOffset CreatedDate { get; set; }
@@ -24,7 +29,7 @@ namespace TicTacToeApi.TicTacToe.Entities
             
             GameId = Guid.NewGuid();
             Player1 = new Player(p1Name, X);
-            Player2 = new Player(p2Name, Y);
+            Player2 = new Player(p2Name, O);
             GameBoard = new Board();
             CreatedDate = DateTimeOffset.UtcNow;
             GameState = "Started";
@@ -33,22 +38,22 @@ namespace TicTacToeApi.TicTacToe.Entities
 
          public int MakeMove(Player player, int coordinate){
 
-            if(player.Equals(Player1) & this.GameBoard.MoveCount == 0){
-                int emptyCheck = GameBoard.UpdateBoard(coordinate, player.Symbol);
+            if(player.Equals(Player1) & GameBoard.MoveCount == 0){
+                GameBoard.UpdateBoard(coordinate, player.Symbol);
                 GameState = "Waiting for next move";
-                return emptyCheck;
+                return 1;
             }
 
-            else if (player.Equals(Player1) & this.GameBoard.MoveCount %2 == 0){
-                int emptyCheck = GameBoard.UpdateBoard(coordinate, player.Symbol);
+            else if (player.Equals(Player1) & GameBoard.MoveCount %2 == 0){
+                GameBoard.UpdateBoard(coordinate, player.Symbol);
                 CheckForWin();
-                return emptyCheck;
+                return 1;
             }
 
-            else if (player.Equals(Player2) & this.GameBoard.MoveCount % 2 != 0){
-                int emptyCheck = GameBoard.UpdateBoard(coordinate, player.Symbol);
+            else if (player.Equals(Player2) & GameBoard.MoveCount % 2 != 0){
+                GameBoard.UpdateBoard(coordinate, player.Symbol);
                 CheckForWin();
-                return emptyCheck;
+                return 1;
             }
 
             else{

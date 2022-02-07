@@ -1,7 +1,8 @@
 using System;
-using TicTacToe.Exceptions;
 using TicTacToeApi.TicTacToe.Entities;
-
+/// <summary>
+/// Dto representing response object after game creation
+/// </summary>
 namespace TicTacToeApi.TicTacToe.Dtos
 { 
     public record CreatedGameDto{
