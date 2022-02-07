@@ -34,8 +34,8 @@ public static class Extensions
             return new GameDto
             {
                 GameId = game.GameId,
-                Player1 = game.Player1,
-                Player2 = game.Player2,
+                Player1 = game.Player1.asPlayerDto(),
+                Player2 = game.Player2.asPlayerDto(),
                 GameBoardRep = game.GameBoard.BoardRep
             };
     }
@@ -47,6 +47,16 @@ public static class Extensions
             GameId = game.GameId,
             Player1Id = game.Player1.PlayerId,
             Player2Id = game.Player2.PlayerId
+        };
+    }
+
+    public static PlayerDto asPlayerDto(this Player player)
+    {
+        return new PlayerDto
+        {
+            PlayerId = player.PlayerId,
+            Symbol = player.Symbol,
+            Name = player.Name
         };
     }
 

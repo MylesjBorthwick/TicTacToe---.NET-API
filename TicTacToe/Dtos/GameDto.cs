@@ -13,9 +13,9 @@ namespace TicTacToeApi.TicTacToe.Dtos
 
         public Guid GameId { get; init;}
 
-        public Player Player1 { get; set;}
+        public PlayerDto Player1 { get; set;}
 
-        public Player Player2 {get; set;}
+        public PlayerDto Player2 {get; set;}
 
         public char[] GameBoardRep {get; init;}
 
