@@ -15,7 +15,7 @@ The contents of the ReadMe include a quick how-to with interaction demos, a brie
 #### How To Run
 **Docker**
 This project contains a docker comose file which can be executed throught the command-line for quick setup.
-Enter **'docker-compose up --build'** to create and start a new docker container.
+Enter **'docker-compose up --build'** to create and start a new docker container. Make sure to be in the correct directory i.e ('\TicTacToeApi\TicTacToe>').
 <div align="center">
 
 ![BuildDocker](ReadmeMedia/Docker%20Build.gif)
