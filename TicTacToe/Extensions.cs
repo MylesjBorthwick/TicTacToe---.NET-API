@@ -36,7 +36,7 @@ public static class Extensions
                 GameId = game.GameId,
                 Player1 = game.Player1,
                 Player2 = game.Player2,
-                GameBoard = game.GameBoard
+                GameBoardRep = game.GameBoard.BoardRep
             };
     }
 

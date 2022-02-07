@@ -1,9 +1,10 @@
 using System;
-
+/// <summary>
+/// Entity representing player with custom contructor.
+/// </summary>
 namespace TicTacToeApi.TicTacToe.Entities
 { 
     public record Player{
-
 
         public Player(string name, char symbol){
             Name = name;
@@ -17,7 +18,6 @@ namespace TicTacToeApi.TicTacToe.Entities
         public char Symbol {get; set;}
 
         public string Name { get; set;}
-
 
     }
 }

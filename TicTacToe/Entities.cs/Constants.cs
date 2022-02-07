@@ -1,14 +1,18 @@
+/// <summary>
+/// Constants cecord contains commonly used variables
+/// including pre-defined winstates.
+/// </summary>
 namespace TicTacToeApi.TicTacToe.Entities
 { 
     public record Constants{
 
         public static readonly char Empty = '?';
         public static readonly char X = 'X';
-        public static readonly char Y = 'Y';
+        public static readonly char O = 'O';
 
         public static readonly char[] XWin = new char[]{X, X, X};
 
-        public static readonly char[] YWin = new char[]{Y, Y, Y};
+        public static readonly char[] OWin = new char[]{O, O, O};
 
         //Diagonal Win Indices
         public static readonly int[] DiagWin1 = new int[] {0,4,8};
@@ -23,16 +27,6 @@ namespace TicTacToeApi.TicTacToe.Entities
         public static readonly int[] VertWin1 = new int[]{0,3,6};
         public static readonly int[] VertWin2 = new int[]{1,4,7};
         public static readonly int[] VertWin3 = new int[]{2,5,8};
-
-                                                            
-
-
-
-
-
-
-
-
 
     }
 }

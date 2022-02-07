@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TicTacToeApi.TicTacToe.Entities;
 
+/// <summary>
+/// Game repository interface
+/// </summary>
+
 namespace TicTacToeApi.TicTacToe.Repositories
 {
     

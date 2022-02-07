@@ -1,16 +1,24 @@
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using TicTacToe.Exceptions;
-
+/// <summary>
+/// Board object stores information about the game state. Board is represented as a 1d character array.
+///This record initializes the board, updates board and checks for win conditions in the array.
+/// </summary>
 namespace TicTacToeApi.TicTacToe.Entities
 { 
     public record Board : Constants {
         
+        //Array representation of game board
         public char[] BoardRep { get; set;}
 
+        //Counter for performed moves
         public int MoveCount {get; set;}
+        
+        //Flag for identifying occupied spaces
+        public bool IsEmpty{get; set;}
 
+        //Constructs board and populates with '?' characters
         public Board(){
 
             BoardRep = new char[9] 
@@ -20,20 +28,29 @@ namespace TicTacToeApi.TicTacToe.Entities
 
         }
 
-        public int UpdateBoard(int position, char symbol){
+        /// <summary>
+        /// Updates board with input symbol at corresponding location in array
+        /// </summary>
+        /// <param name="position">Index in array</param>
+        /// <param name="symbol">Character value for update</param>
+        public void UpdateBoard(int position, char symbol){
 
             if(BoardRep[position] == Empty){
+                IsEmpty = true;
                 BoardRep[position] = symbol;
                 MoveCount++;
-                return 1;
             }
             else{
-                return 0;
+                //Position is occupied by non empty character
+                IsEmpty = false;
             }
 
             
         }
-
+        /// <summary>
+        /// Checks board state againts win conditions defined in Constants 
+        /// </summary>
+        /// <returns>Integer representing player1 win, player2 win, tie or continue</returns>
         public int CheckWinner(){
             
             //Collect Horizontal board conditions
@@ -58,17 +75,18 @@ namespace TicTacToeApi.TicTacToe.Entities
             }
 
             //Check Win conditions for y
-            else if (hor1.SequenceEqual(YWin) | hor2.SequenceEqual(YWin) | hor3.SequenceEqual(YWin) 
-            | vert1.SequenceEqual(YWin) | vert2.SequenceEqual(YWin) | vert3.SequenceEqual(YWin)
-            | diag1.SequenceEqual(YWin) | diag2.SequenceEqual(YWin)){
+            else if (hor1.SequenceEqual(OWin) | hor2.SequenceEqual(OWin) | hor3.SequenceEqual(OWin) 
+            | vert1.SequenceEqual(OWin) | vert2.SequenceEqual(OWin) | vert3.SequenceEqual(OWin)
+            | diag1.SequenceEqual(OWin) | diag2.SequenceEqual(OWin)){
                 return 2;
             }
 
             else if(!BoardRep.Contains(Empty)){
+                //Tie Game
                 return 3;
             }
 
-
+            //Continue Game
             return 0;
         
         }

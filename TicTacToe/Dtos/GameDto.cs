@@ -1,7 +1,8 @@
 using System;
-using TicTacToe.Exceptions;
 using TicTacToeApi.TicTacToe.Entities;
-
+/// <summary>
+/// Game Dto used for representing game entity responses
+/// </summary>
 namespace TicTacToeApi.TicTacToe.Dtos
 { 
     public record GameDto : Constants{
@@ -16,7 +17,7 @@ namespace TicTacToeApi.TicTacToe.Dtos
 
         public Player Player2 {get; set;}
 
-        public Board GameBoard {get; init;}
+        public char[] GameBoardRep {get; init;}
 
     }
 }
